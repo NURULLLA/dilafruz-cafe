@@ -193,6 +193,8 @@ section {
 .nav-logo img {
   height: 40px;
   width: auto;
+  mix-blend-mode: screen;
+  border-radius: 4px;
   transition: transform var(--transition-smooth);
 }
 .navbar.scrolled .nav-logo img {
@@ -370,6 +372,8 @@ section {
   width: auto;
   height: clamp(80px, 15vw, 120px);
   margin: 0 auto 2rem;
+  mix-blend-mode: screen;
+  border-radius: 50%;
   filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.3));
   animation: logo-glow 4s ease-in-out infinite alternate;
 }
