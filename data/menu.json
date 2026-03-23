@@ -927,6 +927,22 @@
         "ru": "",
         "uz": ""
       }
+    },
+    {
+      "id": "1774288425849",
+      "image": "images/placeholder-menu.jpg",
+      "categoryId": "dishes",
+      "price": "75,000 ",
+      "name": {
+        "en": "Non-Kebab",
+        "ru": "Нон Кебаб",
+        "uz": "Non Kavob"
+      },
+      "desc": {
+        "en": "",
+        "ru": "",
+        "uz": ""
+      }
     }
   ]
 }
