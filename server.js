@@ -9,11 +9,13 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SECRET_KEY = 'dilafruz_super_secret_key_change_in_production';
+const SECRET_KEY = process.env.JWT_SECRET || 'dilafruz_fallback_secret_key';
 
-// Admin credentials (hardcoded for simplicity, password is 'admin123')
-const ADMIN_USERNAME = 'admin';
-const ADMIN_PASSWORD_HASH = bcrypt.hashSync('admin123', 10);
+// Admin credentials (using environment variables for security)
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
+const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH 
+    ? bcrypt.hashSync(process.env.ADMIN_PASSWORD_HASH, 10) 
+    : bcrypt.hashSync('admin123', 10);
 
 app.use(cors());
 app.use(express.json());
