@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dilafruz RestoBar — Exquisite Dining & Cocktails in Tashkent</title>
+  <meta name="description" content="Experience Dilafruz RestoBar — where exceptional cuisine meets a vibrant cocktail culture. Premium dining, handcrafted cocktails, and an unforgettable atmosphere in the heart of Tashkent.">
+  <meta name="keywords" content="Dilafruz, RestoBar, restaurant, bar, Tashkent, cocktails, fine dining, Uzbek cuisine">
+  <meta property="og:title" content="Dilafruz RestoBar — Exquisite Dining & Cocktails">
+  <meta property="og:description" content="Premium dining and handcrafted cocktails in an unforgettable atmosphere.">
+  <meta property="og:image" content="logo.svg">
+  <meta property="og:type" content="restaurant">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <img src="logo.svg" alt="Loading Dilafruz" class="loader-logo">
+  </div>
+
+  <!-- Noise Texture Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-logo">
+      <img src="logo.svg" alt="Dilafruz Logo">
+      <span class="nav-logo-text">Dilafruz</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-i18n="nav_story">Our Story</a></li>
+      <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+      <li><a href="#ambiance" data-i18n="nav_gallery">Gallery</a></li>
+      <li><a href="#reservation" class="nav-cta" data-i18n="nav_reserve">Reserve</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="uz">UZ</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-particles" id="heroParticles"></div>
+    </div>
+    <div class="hero-content">
+      <img src="logo.svg" alt="Dilafruz RestoBar Logo" class="hero-logo">
+      <h1 class="hero-title shimmer-text" data-i18n="hero_title">Dilafruz</h1>
+      <p class="hero-tagline" data-i18n="hero_tagline">Resto · Bar · Experience</p>
+      <div class="hero-cta-group">
+        <a href="#reservation" class="btn btn-primary" data-i18n="hero_reserve">Reserve a Table</a>
+        <a href="#menu" class="btn btn-outline" data-i18n="hero_menu">Explore Menu</a>
+      </div>
+    </div>
+    <div class="scroll-indicator" id="scrollIndicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / OUR STORY ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrapper reveal">
+          <img src="images/about-interior.jpg" alt="Dilafruz Interior" class="about-image" id="aboutImage">
+        </div>
+        <div class="about-text reveal">
+          <span class="section-label" data-i18n="about_label">Our Story</span>
+          <h2 class="section-title" data-i18n="about_title">Where Elegance<br>Meets Flavor</h2>
+          <div class="gold-line"></div>
+          <p data-i18n="about_p1">
+            Born from a passion for exceptional hospitality, Dilafruz RestoBar is more than just a restaurant — it's a destination. Named after the timeless beauty that inspires wonder, we bring together the richest traditions of Uzbek and international cuisine with a modern, vibrant bar culture.
+          </p>
+          <p data-i18n="about_p2">
+            Every dish is carefully crafted by our talented chefs using the freshest local ingredients, while our bartenders create signature cocktails that tell their own stories. Step inside and discover an atmosphere where every detail — from the warm lighting to the curated music — is designed to make your evening unforgettable.
+          </p>
+          <div class="about-stats reveal-stagger">
+            <div class="stat">
+              <div class="stat-number">7.5K+</div>
+              <div class="stat-label" data-i18n="stat_followers">Followers</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">100+</div>
+              <div class="stat-label" data-i18n="stat_items">Menu Items</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">★ 4.8</div>
+              <div class="stat-label" data-i18n="stat_rating">Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU HIGHLIGHTS ===== -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu-header reveal">
+        <span class="section-label" data-i18n="menu_label">The Menu</span>
+        <h2 class="section-title" data-i18n="menu_title">Signature Creations</h2>
+        <p class="section-subtitle" data-i18n="menu_subtitle">A curated selection of our chef's finest dishes, blending traditional flavors with contemporary artistry</p>
+      </div>
+ 
+      <div class="menu-tabs reveal" id="menuTabs">
+        <button class="menu-tab active" data-category="all" data-i18n="cat_all">All</button>
+        <button class="menu-tab" data-category="dishes" data-i18n="cat_dishes">1 блюда</button>
+        <button class="menu-tab" data-category="kebabs" data-i18n="cat_kebabs">Шашлыки</button>
+        <button class="menu-tab" data-category="drinks" data-i18n="cat_drinks">Напитки</button>
+        <button class="menu-tab" data-category="sides" data-i18n="cat_sides">Гарниры</button>
+        <button class="menu-tab" data-category="desserts" data-i18n="cat_desserts">Десерты</button>
+        <button class="menu-tab" data-category="salads" data-i18n="cat_salads">Салаты</button>
+        <button class="menu-tab" data-category="appetizers" data-i18n="cat_appetizers">Холодные Закуски</button>
+        <button class="menu-tab" data-category="hookah" data-i18n="cat_hookah">Кальяны</button>
+      </div>
+
+      <div class="menu-grid reveal-stagger" id="menuGrid">
+        <!-- Fetched dynamically from API -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AMBIANCE / GALLERY ===== -->
+  <section class="ambiance" id="ambiance">
+    <div class="container">
+      <div class="ambiance-header reveal">
+        <span class="section-label" data-i18n="gallery_label">The Atmosphere</span>
+        <h2 class="section-title" data-i18n="gallery_title">Feel the Ambiance</h2>
+        <p class="section-subtitle" data-i18n="gallery_subtitle">Step into a world where warm lighting, elegant décor, and curated music create the perfect evening</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <img src="images/gallery-1.jpg" alt="Dilafruz Interior">
+          <span class="gallery-caption">Intimate Dining Area</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-2.jpg" alt="Bar Area">
+          <span class="gallery-caption">The Bar</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-3.jpg" alt="Cocktail Craft">
+          <span class="gallery-caption">Cocktail Craftsmanship</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-4.jpg" alt="Plated Dish">
+          <span class="gallery-caption">Culinary Artistry</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-5.jpg" alt="Ambiance">
+          <span class="gallery-caption">Evening Vibes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESERVATION / CONTACT ===== -->
+  <section class="reservation" id="reservation">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label" data-i18n="reserve_label">Make a Reservation</span>
+        <h2 class="section-title" data-i18n="reserve_title">Your Table Awaits</h2>
+        <p class="section-subtitle" data-i18n="reserve_subtitle">Join us for an unforgettable dining experience. Reserve your table today or visit us to feel the atmosphere firsthand.</p>
+      </div>
+
+      <div class="reservation-info reveal-stagger">
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div class="info-label" data-i18n="contact_location">Location</div>
+          <div class="info-value" data-i18n="contact_location_val">Navoi, Amir Temur St.</div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="info-label" data-i18n="contact_hours">Hours</div>
+          <div class="info-value" data-i18n="contact_hours_val">Daily 09:00 – 02:00</div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <div class="info-label" data-i18n="contact_call">Call Us</div>
+          <div class="info-value"><a href="tel:+998999695800">+998 99 969 58 00</a></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div class="info-label" data-i18n="contact_email">Email</div>
+          <div class="info-value"><a href="mailto:info@dilafruz.uz">info@dilafruz.uz</a></div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <a href="https://www.instagram.com/dilafruz_restobar/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-bottom: 1.5rem;" data-i18n="contact_ig">
+          Follow Us on Instagram
+        </a>
+      </div>
+
+      <div class="social-links reveal">
+        <a href="https://www.instagram.com/dilafruz_restobar/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="https://t.me/dilafruz_restobar" target="_blank" rel="noopener" class="social-link" aria-label="Telegram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p class="footer-text">© 2026 <span class="brand-name">Dilafruz RestoBar</span>. All rights reserved.</p>
+    <div class="footer-admin-link">
+      <a href="/admin">Admin</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
