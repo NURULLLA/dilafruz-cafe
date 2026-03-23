@@ -62,7 +62,6 @@ body {
   border-radius: 50%;
   margin-bottom: 1.5rem;
   border: 2px solid var(--clr-gold);
-  mix-blend-mode: screen;
 }
 
 .login-card h2 {
@@ -116,7 +115,7 @@ body {
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  mix-blend-mode: screen;
+  border: 1px solid var(--clr-border);
 }
 
 .admin-header h2 {
@@ -250,8 +249,30 @@ td img {
   cursor: pointer;
 }
 
-.btn-edit { background: #2e7d32; color: white; border: none; padding: 0.4rem 0.8rem; border-radius: 4px; cursor: pointer; margin-right: 0.5rem; }
-.btn-delete { background: #c62828; color: white; border: none; padding: 0.4rem 0.8rem; border-radius: 4px; cursor: pointer; }
+.btn-edit { 
+  background: transparent; 
+  color: #81c784; 
+  border: 1px solid #81c784; 
+  padding: 0.4rem 0.8rem; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+.btn-edit:hover { background: rgba(129, 199, 132, 0.1); }
+
+.btn-delete { 
+  background: transparent; 
+  color: #e57373; 
+  border: 1px solid #e57373; 
+  padding: 0.4rem 0.8rem; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+.btn-delete:hover { background: rgba(229, 115, 115, 0.1); }
 
 .btn-mini {
   background: rgba(255, 255, 255, 0.1);

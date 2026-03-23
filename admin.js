@@ -112,7 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: getGHHeaders()
       });
       const data = await res.json();
-      const content = atob(data.content);
+      // Properly decode Base64 to UTF-8
+      const content = decodeURIComponent(escape(atob(data.content)));
       const json = JSON.parse(content);
       menuItems = json.items;
       renderTable();
@@ -132,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tr = document.createElement('tr');
       const nameStr = `${item.name.en} / ${item.name.ru} / ${item.name.uz}`;
       tr.innerHTML = `
-        <td><img src="/${item.image}" alt="Img" onerror="this.src=''"></td>
+        <td><img src="${item.image}" alt="Img" onerror="this.src='images/placeholder-menu.jpg'"></td>
         <td>${nameStr}</td>
         <td>${categoryNames[item.categoryId] || item.categoryId}</td>
         <td>${item.price}</td>
@@ -197,7 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sha = dataGet.sha;
 
     // 2. Update file
-    const newContent = btoa(JSON.stringify({ items: newMenuItems }, null, 2));
+    // Properly encode UTF-8 to Base64
+    const newContent = btoa(unescape(encodeURIComponent(JSON.stringify({ items: newMenuItems }, null, 2))));
     const resPut = await fetch(url, {
       method: 'PUT',
       headers: getGHHeaders(),
