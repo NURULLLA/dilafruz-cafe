@@ -7,7 +7,7 @@ const dataFile = path.join(__dirname, 'data', 'menu.json');
 const files = fs.readdirSync(imageDir);
 
 // Categories
-// dishes, kebabs, drinks, sides, desserts, salads, appetizers, hookah
+// dishes, dishes2, kebabs, drinks, sides, desserts, salads, appetizers, hookah
 
 const items = [];
 let idCounter = 1;

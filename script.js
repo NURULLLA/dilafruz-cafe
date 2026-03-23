@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'menu-card';
       card.dataset.category = item.categoryId;
 
-      let name = item.name[currentLang] || item.name.en;
-      let desc = item.desc[currentLang] || item.desc.en;
+      let name = item.name[currentLang] || item.name.en || "";
+      let desc = item.desc[currentLang] || null;
 
       card.innerHTML = `
         <img src="${item.image}" alt="${name}" class="menu-card-img">
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="menu-card-name">${name}</span>
             <span class="menu-card-price">${item.price}</span>
           </div>
-          <p class="menu-card-desc">${desc}</p>
+          ${desc ? `<p class="menu-card-desc">${desc}</p>` : ''}
         </div>
       `;
       card.style.opacity = '0';
@@ -276,6 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
       menu_subtitle: "A curated selection of our chef's finest dishes, blending traditional flavors with contemporary artistry",
       cat_all: "All",
       cat_dishes: "Soups & First Courses",
+      cat_dishes2: "Second Courses",
       cat_kebabs: "Kebabs",
       cat_drinks: "Drinks",
       cat_sides: "Side Dishes",
@@ -356,6 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
       menu_subtitle: "Тщательно отобранные блюда, сочетающие традиционные вкусы и современное искусство",
       cat_all: "Все",
       cat_dishes: "1 блюда",
+      cat_dishes2: "2 блюда",
       cat_kebabs: "Шашлыки",
       cat_drinks: "Напитки",
       cat_sides: "Гарниры",
@@ -436,6 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
       menu_subtitle: "An'anaviy lazzatlar va zamonaviy san'at uyg'unlashgan sara taomlar to'plami",
       cat_all: "Barchasi",
       cat_dishes: "Birinchi Taomlar",
+      cat_dishes2: "Ikkinchi Taomlar",
       cat_kebabs: "Shashliklar",
       cat_drinks: "Ichimliklar",
       cat_sides: "Garnirlar",

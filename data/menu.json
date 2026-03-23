@@ -911,6 +911,22 @@
         "ru": "",
         "uz": ""
       }
+    },
+    {
+      "id": "test-999",
+      "categoryId": "dishes2",
+      "price": "50 000 сум",
+      "image": "images/placeholder-menu.jpg",
+      "name": {
+        "en": "Test Second Course",
+        "ru": "",
+        "uz": ""
+      },
+      "desc": {
+        "en": "This description should only show in English.",
+        "ru": "",
+        "uz": ""
+      }
     }
   ]
 }

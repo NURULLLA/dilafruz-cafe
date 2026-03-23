@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const categoryNames = {
     dishes: "1 блюда",
+    dishes2: "2 блюда",
     kebabs: "Шашлыки",
     drinks: "Напитки",
     sides: "Гарниры",
