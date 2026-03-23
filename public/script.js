@@ -140,10 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  fetch('/api/menu')
+  fetch('data/menu.json')
     .then(res => res.json())
-    .then(data => {
-      allMenuItems = data;
+    .then(json => {
+      allMenuItems = json.items;
       renderMenu(allMenuItems, 'all');
     })
     .catch(err => console.error('Error fetching menu:', err));

@@ -14,23 +14,21 @@
   
   <div id="loginSection" class="section">
     <div class="login-card reveal">
-      <img src="photo_2026-03-19_17-18-20.jpg" alt="Logo" class="login-logo">
-      <h2>Вход в систему</h2>
+      <img src="logo.svg" alt="Logo" class="login-logo">
+      <h2>Панель администратора</h2>
+      <p class="login-hint">Введите ваш GitHub Token для управления меню</p>
       <div class="input-group">
-        <input type="text" id="username" placeholder="Имя пользователя">
-      </div>
-      <div class="input-group">
-        <input type="password" id="password" placeholder="Пароль">
+        <input type="password" id="password" placeholder="GitHub Personal Access Token">
       </div>
       <button id="loginBtn" class="btn-primary">Войти</button>
-      <p id="loginError" class="error hidden">Неверное имя пользователя или пароль</p>
+      <p id="loginError" class="error hidden">Неверный токен или ошибка доступа</p>
     </div>
   </div>
 
   <div id="dashboardSection" class="section hidden">
     <header class="admin-header">
       <div class="header-left">
-        <img src="photo_2026-03-19_17-18-20.jpg" alt="Logo" class="admin-logo">
+        <img src="logo.svg" alt="Logo" class="admin-logo">
         <h2>Управление меню</h2>
       </div>
       <div class="header-right">

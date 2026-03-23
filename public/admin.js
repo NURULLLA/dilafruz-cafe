@@ -19,15 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   checkAuth();
 
   async function checkAuth() {
-    try {
-      const res = await fetch('/api/check-auth');
-      const data = await res.json();
-      if (data.success) {
-        showDashboard();
-      } else {
-        showLogin();
-      }
-    } catch (err) {
+    const token = localStorage.getItem('gh_token');
+    if (token) {
+      showDashboard();
+    } else {
       showLogin();
     }
   }
@@ -45,17 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- LOGIN LOGIC ---
-  loginBtn.addEventListener('click', async () => {
-    const res = await fetch('/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        username: usernameInput.value,
-        password: passwordInput.value
-      })
-    });
-    const data = await res.json();
-    if (data.success) {
+  loginBtn.addEventListener('click', () => {
+    const token = passwordInput.value.trim();
+    if (token) {
+      localStorage.setItem('gh_token', token);
       loginError.classList.add('hidden');
       showDashboard();
     } else {
@@ -63,10 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  logoutBtn.addEventListener('click', async () => {
-    await fetch('/api/logout', { method: 'POST' });
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('gh_token');
     showLogin();
   });
+
+  function getGHHeaders() {
+    const token = localStorage.getItem('gh_token');
+    return {
+      'Authorization': `token ${token}`,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    };
+  }
 
   // --- DASHBOARD LOGIC ---
   let menuItems = [];
@@ -108,9 +105,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   async function loadMenu() {
-    const res = await fetch('/api/menu');
-    menuItems = await res.json();
-    renderTable();
+    const repo = 'NURULLLA/dilafruz-cafe';
+    const filePath = 'data/menu.json';
+    try {
+      const res = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+        headers: getGHHeaders()
+      });
+      const data = await res.json();
+      const content = atob(data.content);
+      const json = JSON.parse(content);
+      menuItems = json.items;
+      renderTable();
+    } catch (err) {
+      console.error('Error loading menu:', err);
+      // Fallback for non-auth fetch
+      const res = await fetch('data/menu.json');
+      const json = await res.json();
+      menuItems = json.items;
+      renderTable();
+    }
   }
 
   function renderTable() {
@@ -173,44 +186,85 @@ document.addEventListener('DOMContentLoaded', () => {
     itemModal.classList.remove('hidden');
   }
 
+  async function saveToGitHub(newMenuItems, message = 'Update menu') {
+    const repo = 'NURULLLA/dilafruz-cafe';
+    const filePath = 'data/menu.json';
+    const url = `https://api.github.com/repos/${repo}/contents/${filePath}`;
+    
+    // 1. Get current file SHA
+    const resGet = await fetch(url, { headers: getGHHeaders() });
+    const dataGet = await resGet.json();
+    const sha = dataGet.sha;
+
+    // 2. Update file
+    const newContent = btoa(JSON.stringify({ items: newMenuItems }, null, 2));
+    const resPut = await fetch(url, {
+      method: 'PUT',
+      headers: getGHHeaders(),
+      body: JSON.stringify({
+        message,
+        content: newContent,
+        sha
+      })
+    });
+    
+    if (resPut.ok) {
+      return true;
+    } else {
+      const err = await resPut.json();
+      throw new Error(err.message);
+    }
+  }
+
   itemForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const id = document.getElementById('itemId').value;
     const formData = new FormData(itemForm);
     
-    // Determine method and URL based on id existence
-    const method = id ? 'PUT' : 'POST';
-    const url = id ? `/api/menu/${id}` : '/api/menu';
+    const newItemData = {
+      categoryId: formData.get('categoryId'),
+      price: formData.get('price'),
+      name: {
+        en: formData.get('name.en'),
+        ru: formData.get('name.ru'),
+        uz: formData.get('name.uz')
+      },
+      desc: {
+        en: formData.get('desc.en'),
+        ru: formData.get('desc.ru'),
+        uz: formData.get('desc.uz')
+      }
+    };
+
+    let updatedMenu = [...menuItems];
+    if (id) {
+      const index = updatedMenu.findIndex(item => item.id === id);
+      updatedMenu[index] = { ...updatedMenu[index], ...newItemData };
+    } else {
+      updatedMenu.push({
+        id: Date.now().toString(),
+        image: 'images/placeholder-menu.jpg', // Default for now
+        ...newItemData
+      });
+    }
 
     try {
-      const res = await fetch(url, {
-        method,
-        body: formData
-      });
-      const data = await res.json();
-      if (data.success) {
-        itemModal.classList.add('hidden');
-        loadMenu(); // Reload table
-      } else {
-        alert('Ошибка при сохранении: ' + data.message);
-      }
+      await saveToGitHub(updatedMenu, id ? `Update item ${id}` : 'Add new item');
+      itemModal.classList.add('hidden');
+      loadMenu(); 
     } catch (err) {
-      console.error(err);
-      alert('Ошибка при сохранении блюда.');
+      alert('GitHub Error: ' + err.message);
     }
   });
 
   async function deleteItem(id) {
     if (confirm('Вы уверены, что хотите удалить это блюдо?')) {
+      const updatedMenu = menuItems.filter(item => item.id !== id);
       try {
-        const res = await fetch(`/api/menu/${id}`, { method: 'DELETE' });
-        const data = await res.json();
-        if (data.success) {
-          loadMenu();
-        }
+        await saveToGitHub(updatedMenu, `Delete item ${id}`);
+        loadMenu();
       } catch (err) {
-        console.error(err);
-        alert('Ошибка при удалении блюда.');
+        alert('GitHub Error: ' + err.message);
       }
     }
   }
