@@ -19,12 +19,39 @@ document.addEventListener('DOMContentLoaded', () => {
   checkAuth();
 
   async function checkAuth() {
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const token = localStorage.getItem('gh_token');
+    
+    if (isLocal) {
+      console.log('[Admin] Running on localhost. Local edits enabled.');
+      showDashboard();
+      if (!token) {
+        showStatus('Local Mode (GitHub Sync Disabled - Login with token to enable)', 'warning');
+      } else {
+        showStatus('Local Mode (GitHub Sync Enabled)', 'success');
+      }
+      return;
+    }
+
     if (token) {
       showDashboard();
     } else {
       showLogin();
     }
+  }
+
+  function showStatus(msg, type = 'info') {
+    const statusEl = document.getElementById('syncStatus') || createStatusEl();
+    statusEl.textContent = msg;
+    statusEl.className = `status-bar ${type}`;
+  }
+
+  function createStatusEl() {
+    const el = document.createElement('div');
+    el.id = 'syncStatus';
+    el.className = 'status-bar';
+    dashboardSection.prepend(el);
+    return el;
   }
 
   function showLogin() {
@@ -53,7 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   logoutBtn.addEventListener('click', () => {
     localStorage.removeItem('gh_token');
-    showLogin();
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      location.reload(); // Refresh to update status
+    } else {
+      showLogin();
+    }
   });
 
   function getGHHeaders() {
@@ -189,6 +220,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function saveToGitHub(newMenuItems, message = 'Update menu') {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      const res = await fetch('/api/menu', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: newMenuItems })
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || 'Local menu save failed');
+      }
+      return true;
+    }
+
     const repo = 'NURULLLA/dilafruz-cafe';
     const filePath = 'data/menu.json';
     const url = `https://api.github.com/repos/${repo}/contents/${filePath}`;
@@ -219,44 +263,130 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  async function uploadImageToGitHub(path, base64Content) {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path, image: base64Content })
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || 'Local image upload failed');
+      }
+      return true;
+    }
+
+    const repo = 'NURULLLA/dilafruz-cafe';
+    const url = `https://api.github.com/repos/${repo}/contents/${path}`;
+    
+    let sha = null;
+    try {
+      const resGet = await fetch(url, { headers: getGHHeaders() });
+      if (resGet.ok) {
+        const dataGet = await resGet.json();
+        sha = dataGet.sha;
+      }
+    } catch(e) {}
+
+    const body = {
+      message: `Upload image ${path}`,
+      content: base64Content
+    };
+    if (sha) body.sha = sha;
+
+    const resPut = await fetch(url, {
+      method: 'PUT',
+      headers: getGHHeaders(),
+      body: JSON.stringify(body)
+    });
+    
+    if (!resPut.ok) {
+      const err = await resPut.json();
+      throw new Error(err.message);
+    }
+    return true;
+  }
+
   itemForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const id = document.getElementById('itemId').value;
     const formData = new FormData(itemForm);
     
-    const newItemData = {
-      categoryId: formData.get('categoryId'),
-      price: formData.get('price'),
-      name: {
-        en: formData.get('name.en'),
-        ru: formData.get('name.ru'),
-        uz: formData.get('name.uz')
-      },
-      desc: {
-        en: formData.get('desc.en'),
-        ru: formData.get('desc.ru'),
-        uz: formData.get('desc.uz')
-      }
-    };
-
-    let updatedMenu = [...menuItems];
-    if (id) {
-      const index = updatedMenu.findIndex(item => item.id === id);
-      updatedMenu[index] = { ...updatedMenu[index], ...newItemData };
-    } else {
-      updatedMenu.push({
-        id: Date.now().toString(),
-        image: 'images/placeholder-menu.jpg', // Default for now
-        ...newItemData
-      });
-    }
+    const saveBtn = document.getElementById('saveItemBtn');
+    const originalBtnText = saveBtn.textContent;
+    saveBtn.textContent = 'Сохранение...';
+    saveBtn.disabled = true;
 
     try {
+      const imageInput = document.getElementById('itemImage');
+      let uploadedImagePath = null;
+      
+      if (imageInput.files && imageInput.files.length > 0) {
+        const file = imageInput.files[0];
+        const base64Data = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            const result = reader.result;
+            if (result.includes(',')) {
+              resolve(result.split(',')[1]);
+            } else {
+              reject(new Error('Invalid image data'));
+            }
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+        
+        const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, '');
+        const imageFileName = `images/${Date.now()}_${safeName}`;
+        
+        await uploadImageToGitHub(imageFileName, base64Data);
+        uploadedImagePath = imageFileName;
+      }
+
+      const newItemData = {
+        categoryId: formData.get('categoryId'),
+        price: formData.get('price'),
+        name: {
+          en: formData.get('name.en'),
+          ru: formData.get('name.ru'),
+          uz: formData.get('name.uz')
+        },
+        desc: {
+          en: formData.get('desc.en'),
+          ru: formData.get('desc.ru'),
+          uz: formData.get('desc.uz')
+        }
+      };
+
+      let updatedMenu = [...menuItems];
+      if (id) {
+        const index = updatedMenu.findIndex(item => item.id === id);
+        const existingImagePath = updatedMenu[index].image;
+        updatedMenu[index] = { 
+          ...updatedMenu[index], 
+          ...newItemData
+        };
+        if (uploadedImagePath) {
+          updatedMenu[index].image = uploadedImagePath;
+        }
+      } else {
+        updatedMenu.push({
+          id: Date.now().toString(),
+          image: uploadedImagePath || 'images/placeholder-menu.jpg',
+          ...newItemData
+        });
+      }
+
       await saveToGitHub(updatedMenu, id ? `Update item ${id}` : 'Add new item');
       itemModal.classList.add('hidden');
-      loadMenu(); 
+      loadMenu();
     } catch (err) {
-      alert('GitHub Error: ' + err.message);
+      alert('Ошибка: ' + err.message);
+    } finally {
+      saveBtn.textContent = originalBtnText;
+      saveBtn.disabled = false;
     }
   });
 

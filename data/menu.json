@@ -3,11 +3,11 @@
     {
       "id": "1",
       "categoryId": "dishes",
-      "price": "0 сум",
+      "price": "30.000 сум",
       "image": "images/1.shurva.jpg",
       "name": {
-        "en": "Shurva",
-        "ru": "Shurva",
+        "en": "Soup",
+        "ru": "Шурпа",
         "uz": "Shurva"
       },
       "desc": {
@@ -19,11 +19,11 @@
     {
       "id": "2",
       "categoryId": "kebabs",
-      "price": "0 сум",
+      "price": "25,000 сум",
       "image": "images/10.kusochniy-shashlik.webp",
       "name": {
-        "en": "Kusochniy shashlik",
-        "ru": "Kusochniy shashlik",
+        "en": "Piecewise shashlik",
+        "ru": "Кусковой Шашлык",
         "uz": "Kusochniy shashlik"
       },
       "desc": {
@@ -35,11 +35,11 @@
     {
       "id": "3",
       "categoryId": "kebabs",
-      "price": "0 сум",
+      "price": "35,000 сум",
       "image": "images/11.kovirga.jpg",
       "name": {
-        "en": "Kovirga",
-        "ru": "Kovirga",
+        "en": "Ribs Shashlik",
+        "ru": "Рёбрышки ",
         "uz": "Kovirga"
       },
       "desc": {
@@ -50,28 +50,28 @@
     },
     {
       "id": "4",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "kebabs",
+      "price": "300,000 сум",
       "image": "images/13.koreyka.jpg",
       "name": {
         "en": "Koreyka",
-        "ru": "Koreyka",
+        "ru": "Корейка",
         "uz": "Koreyka"
       },
       "desc": {
         "en": "Description pending.",
-        "ru": "Описание ожидается.",
+        "ru": "Описание ожидается. ",
         "uz": "Tavsif kutumoqda."
       }
     },
     {
       "id": "5",
       "categoryId": "kebabs",
-      "price": "0 сум",
+      "price": "30,000 сум",
       "image": "images/14.semichka-shashlik.jpg",
       "name": {
         "en": "Semichka shashlik",
-        "ru": "Semichka shashlik",
+        "ru": "Семички Шашлык",
         "uz": "Semichka shashlik"
       },
       "desc": {
@@ -83,12 +83,12 @@
     {
       "id": "6",
       "categoryId": "dishes",
-      "price": "0 сум",
+      "price": "22,000 сум",
       "image": "images/15.kurinie-krilishki.jpg",
       "name": {
-        "en": "Kurinie krilishki",
-        "ru": "Kurinie krilishki",
-        "uz": "Kurinie krilishki"
+        "en": "Chicken Wings Shashlik",
+        "ru": "Куриные Крылышки",
+        "uz": "Tovuq Qanot "
       },
       "desc": {
         "en": "Description pending.",
@@ -98,13 +98,13 @@
     },
     {
       "id": "7",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "kebabs",
+      "price": "18,000 сум",
       "image": "images/18.tuvuk-shahlik.webp",
       "name": {
-        "en": "Tuvuk shahlik",
-        "ru": "Tuvuk shahlik",
-        "uz": "Tuvuk shahlik"
+        "en": "Chicken shashlik",
+        "ru": "Куринный Шашлык",
+        "uz": "Tovuq shashlik"
       },
       "desc": {
         "en": "Description pending.",
@@ -115,11 +115,11 @@
     {
       "id": "8",
       "categoryId": "kebabs",
-      "price": "0 сум",
+      "price": "26,000 сум",
       "image": "images/19.rulet-shashlik.jpg",
       "name": {
         "en": "Rulet shashlik",
-        "ru": "Rulet shashlik",
+        "ru": "Рулет Шашлык",
         "uz": "Rulet shashlik"
       },
       "desc": {
@@ -131,11 +131,11 @@
     {
       "id": "9",
       "categoryId": "dishes",
-      "price": "0 сум",
+      "price": "35.000 сум",
       "image": "images/2.barak-shorva.webp",
       "name": {
-        "en": "Barak shorva",
-        "ru": "Barak shorva",
+        "en": "Soup with dumplings",
+        "ru": "Суп с Пельменями",
         "uz": "Barak shorva"
       },
       "desc": {
@@ -147,28 +147,12 @@
     {
       "id": "10",
       "categoryId": "kebabs",
-      "price": "0 сум",
+      "price": "270,000 сум",
       "image": "images/20.shashlik-asorti.jpg",
       "name": {
-        "en": "Shashlik asorti",
-        "ru": "Shashlik asorti",
-        "uz": "Shashlik asorti"
-      },
-      "desc": {
-        "en": "Description pending.",
-        "ru": "Описание ожидается.",
-        "uz": "Tavsif kutumoqda."
-      }
-    },
-    {
-      "id": "11",
-      "categoryId": "dishes",
-      "price": "0 сум",
-      "image": "images/22.tukhum-barak.jpg",
-      "name": {
-        "en": "Tukhum barak",
-        "ru": "Tukhum barak",
-        "uz": "Tukhum barak"
+        "en": "Shashlik assorti",
+        "ru": "Shashlik assorti",
+        "uz": "Shashlik assorti"
       },
       "desc": {
         "en": "Description pending.",
@@ -178,12 +162,12 @@
     },
     {
       "id": "12",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "35,000 сум",
       "image": "images/25.kadi-barak.jpg",
       "name": {
-        "en": "Kadi barak",
-        "ru": "Kadi barak",
+        "en": "Pumpkin Dumplings",
+        "ru": "Вареники с Тыквой",
         "uz": "Kadi barak"
       },
       "desc": {
@@ -194,29 +178,13 @@
     },
     {
       "id": "13",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "38,000 сум",
       "image": "images/26.kartoshka-barak.jpg",
       "name": {
-        "en": "Kartoshka barak",
-        "ru": "Kartoshka barak",
-        "uz": "Kartoshka barak"
-      },
-      "desc": {
-        "en": "Description pending.",
-        "ru": "Описание ожидается.",
-        "uz": "Tavsif kutumoqda."
-      }
-    },
-    {
-      "id": "14",
-      "categoryId": "dishes",
-      "price": "0 сум",
-      "image": "images/28.gomma.webp",
-      "name": {
-        "en": "Gomma",
-        "ru": "Gomma",
-        "uz": "Gomma"
+        "en": "Tuhum Barak",
+        "ru": "Тухум Барак",
+        "uz": "Tuhum Barak"
       },
       "desc": {
         "en": "Description pending.",
@@ -227,11 +195,11 @@
     {
       "id": "15",
       "categoryId": "dishes",
-      "price": "0 сум",
+      "price": "30,000 сум",
       "image": "images/3-unoshi.jpg",
       "name": {
         "en": "Unoshi",
-        "ru": "Unoshi",
+        "ru": "Ун-Оши",
         "uz": "Unoshi"
       },
       "desc": {
@@ -241,29 +209,13 @@
       }
     },
     {
-      "id": "16",
-      "categoryId": "dishes",
-      "price": "0 сум",
-      "image": "images/32.tovik-chihonbil.jpg",
-      "name": {
-        "en": "Tovik chihonbil",
-        "ru": "Tovik chihonbil",
-        "uz": "Tovik chihonbil"
-      },
-      "desc": {
-        "en": "Description pending.",
-        "ru": "Описание ожидается.",
-        "uz": "Tavsif kutumoqda."
-      }
-    },
-    {
       "id": "17",
-      "categoryId": "kebabs",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "70,000 сум",
       "image": "images/33.kabob.png",
       "name": {
         "en": "Kabob",
-        "ru": "Kabob",
+        "ru": "Кебаб",
         "uz": "Kabob"
       },
       "desc": {
@@ -274,8 +226,8 @@
     },
     {
       "id": "18",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "20,000 сум",
       "image": "images/35.kotlets.jpg",
       "name": {
         "en": "Kotlets",
@@ -291,12 +243,12 @@
     {
       "id": "19",
       "categoryId": "dishes",
-      "price": "0 сум",
+      "price": "10.000 сум",
       "image": "images/4-Gudja.jpg",
       "name": {
-        "en": "Gudja",
-        "ru": "Gudja",
-        "uz": "Gudja"
+        "en": "Guja",
+        "ru": "Гужа",
+        "uz": "Guja"
       },
       "desc": {
         "en": "Description pending.",
@@ -306,12 +258,12 @@
     },
     {
       "id": "20",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "65,000 сум",
       "image": "images/42.yurak-bagir.jpeg",
       "name": {
-        "en": "Yurak bagir",
-        "ru": "Yurak bagir",
+        "en": "Heart and liver",
+        "ru": "Сердце и Печень",
         "uz": "Yurak bagir"
       },
       "desc": {
@@ -322,12 +274,12 @@
     },
     {
       "id": "21",
-      "categoryId": "kebabs",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "75,000 сум",
       "image": "images/43.kazan-kabob.png",
       "name": {
         "en": "Kazan kabob",
-        "ru": "Kazan kabob",
+        "ru": "Казан Кебаб",
         "uz": "Kazan kabob"
       },
       "desc": {
@@ -338,12 +290,12 @@
     },
     {
       "id": "22",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "45,000 сум",
       "image": "images/44.bishteks.png",
       "name": {
         "en": "Bishteks",
-        "ru": "Bishteks",
+        "ru": "Бифштекс",
         "uz": "Bishteks"
       },
       "desc": {
@@ -354,12 +306,12 @@
     },
     {
       "id": "23",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "40,000 сум",
       "image": "images/45.shuvit-oshi.jpg",
       "name": {
         "en": "Shuvit oshi",
-        "ru": "Shuvit oshi",
+        "ru": "Шувит Оши",
         "uz": "Shuvit oshi"
       },
       "desc": {
@@ -371,11 +323,11 @@
     {
       "id": "24",
       "categoryId": "dishes",
-      "price": "0 сум",
+      "price": "32.000 сум",
       "image": "images/5. tefteli.webp",
       "name": {
-        "en": "Tefteli",
-        "ru": "Tefteli",
+        "en": "Soup with Meatballs",
+        "ru": "Тефтели",
         "uz": "Tefteli"
       },
       "desc": {
@@ -387,12 +339,12 @@
     {
       "id": "25",
       "categoryId": "dishes",
-      "price": "0 сум",
+      "price": "42,000 сум",
       "image": "images/6.lagman-generated.jpeg",
       "name": {
-        "en": "Lagman generated",
-        "ru": "Lagman generated",
-        "uz": "Lagman generated"
+        "en": "Uygur Lagman",
+        "ru": "Уйгурский Лагман",
+        "uz": "Uygur Lagmon"
       },
       "desc": {
         "en": "Description pending.",
@@ -403,11 +355,11 @@
     {
       "id": "26",
       "categoryId": "dishes",
-      "price": "0 сум",
+      "price": "40.000 сум",
       "image": "images/7.golubsi.jpg",
       "name": {
-        "en": "Golubsi",
-        "ru": "Golubsi",
+        "en": "Cabbage Rolls",
+        "ru": "Голубцы",
         "uz": "Golubsi"
       },
       "desc": {
@@ -419,7 +371,7 @@
     {
       "id": "27",
       "categoryId": "kebabs",
-      "price": "0 сум",
+      "price": "16,000 сум",
       "image": "images/8. Ijjan-shashlik.jpg",
       "name": {
         "en": "Ijjan shashlik",
@@ -434,8 +386,8 @@
     },
     {
       "id": "28",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "kebabs",
+      "price": "22,000 сум",
       "image": "images/9.shahlik-gijduan.jpg",
       "name": {
         "en": "Shahlik gijduan",
@@ -451,11 +403,11 @@
     {
       "id": "31",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "45,000 сум",
       "image": "images/cesar-salat.png",
       "name": {
-        "en": "Cesar salat",
-        "ru": "Cesar salat",
+        "en": "Cesar Salad",
+        "ru": "Цезарь салат",
         "uz": "Cesar salat"
       },
       "desc": {
@@ -466,13 +418,13 @@
     },
     {
       "id": "32",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "45,000 сум",
       "image": "images/chahohbili-generated.webp",
       "name": {
-        "en": "Chahohbili generated",
-        "ru": "Chahohbili generated",
-        "uz": "Chahohbili generated"
+        "en": "Chiken Chihonbil",
+        "ru": "Куриный Чиханбиль",
+        "uz": "Tovuq Chihonbil"
       },
       "desc": {
         "en": "Description pending.",
@@ -483,11 +435,11 @@
     {
       "id": "33",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "10,000 сум",
       "image": "images/chakki-salat.png",
       "name": {
-        "en": "Chakki salat",
-        "ru": "Chakki salat",
+        "en": "Chakki Salad",
+        "ru": "Чакки salat",
         "uz": "Chakki salat"
       },
       "desc": {
@@ -498,29 +450,13 @@
     },
     {
       "id": "34",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "16,000 сум",
       "image": "images/chebureki-generated.jpg",
       "name": {
-        "en": "Chebureki generated",
-        "ru": "Chebureki generated",
-        "uz": "Chebureki generated"
-      },
-      "desc": {
-        "en": "Description pending.",
-        "ru": "Описание ожидается.",
-        "uz": "Tavsif kutumoqda."
-      }
-    },
-    {
-      "id": "35",
-      "categoryId": "dishes",
-      "price": "0 сум",
-      "image": "images/chiken-slivcohniy.png",
-      "name": {
-        "en": "Chiken slivcohniy",
-        "ru": "Chiken slivcohniy",
-        "uz": "Chiken slivcohniy"
+        "en": "Chebureki ",
+        "ru": "Чебуреки",
+        "uz": "Gumma"
       },
       "desc": {
         "en": "Description pending.",
@@ -531,11 +467,11 @@
     {
       "id": "36",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "40,000 сум",
       "image": "images/dilafruz-salat.png",
       "name": {
-        "en": "Dilafruz salat",
-        "ru": "Dilafruz salat",
+        "en": "Dilafruz salad",
+        "ru": "Дилафруз Салат",
         "uz": "Dilafruz salat"
       },
       "desc": {
@@ -547,11 +483,11 @@
     {
       "id": "37",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "45,000 сум",
       "image": "images/dollar-salat.png",
       "name": {
-        "en": "Dollar salat",
-        "ru": "Dollar salat",
+        "en": "Dollar Salad",
+        "ru": "Доллар Салат",
         "uz": "Dollar salat"
       },
       "desc": {
@@ -562,13 +498,13 @@
     },
     {
       "id": "43",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "salads",
+      "price": "45,000 сум",
       "image": "images/Gemini_Generated_Image_5wbyng5wbyng5wby.png",
       "name": {
-        "en": "Gemini Generated Image 5wbyng5wbyng5wby",
-        "ru": "Gemini Generated Image 5wbyng5wbyng5wby",
-        "uz": "Gemini Generated Image 5wbyng5wbyng5wby"
+        "en": "French Salat",
+        "ru": "Французский Салат",
+        "uz": "Fransuz Salat"
       },
       "desc": {
         "en": "Description pending.",
@@ -579,12 +515,12 @@
     {
       "id": "44",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "45,000 сум",
       "image": "images/grecheskiy-salat.jpg",
       "name": {
-        "en": "Grecheskiy salat",
-        "ru": "Grecheskiy salat",
-        "uz": "Grecheskiy salat"
+        "en": "Greek Salat",
+        "ru": "Греческий Салат",
+        "uz": "Yunoncha Salat"
       },
       "desc": {
         "en": "Description pending.",
@@ -595,44 +531,12 @@
     {
       "id": "45",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "45,000 сум",
       "image": "images/gribnoy-salat.jpg",
       "name": {
-        "en": "Gribnoy salat",
-        "ru": "Gribnoy salat",
-        "uz": "Gribnoy salat"
-      },
-      "desc": {
-        "en": "Description pending.",
-        "ru": "Описание ожидается.",
-        "uz": "Tavsif kutumoqda."
-      }
-    },
-    {
-      "id": "46",
-      "categoryId": "dishes",
-      "price": "0 сум",
-      "image": "images/idjan.png",
-      "name": {
-        "en": "Idjan",
-        "ru": "Idjan",
-        "uz": "Idjan"
-      },
-      "desc": {
-        "en": "Description pending.",
-        "ru": "Описание ожидается.",
-        "uz": "Tavsif kutumoqda."
-      }
-    },
-    {
-      "id": "48",
-      "categoryId": "kebabs",
-      "price": "0 сум",
-      "image": "images/kazan-kabob-generated.jpg",
-      "name": {
-        "en": "Kazan kabob generated",
-        "ru": "Kazan kabob generated",
-        "uz": "Kazan kabob generated"
+        "en": "Mushrooms Salad ",
+        "ru": "Грибной Салат",
+        "uz": "Qoziqorin salat"
       },
       "desc": {
         "en": "Description pending.",
@@ -642,13 +546,13 @@
     },
     {
       "id": "49",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "40.000 сум",
       "image": "images/kotirma-generated.png",
       "name": {
-        "en": "Kotirma generated",
-        "ru": "Kotirma generated",
-        "uz": "Kotirma generated"
+        "en": "Kotir-Barak",
+        "ru": "Kotir-Barak",
+        "uz": "Kotir-Barak"
       },
       "desc": {
         "en": "Description pending.",
@@ -658,29 +562,13 @@
     },
     {
       "id": "51",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "40,000 сум",
       "image": "images/manti.webp",
       "name": {
         "en": "Manti",
-        "ru": "Manti",
+        "ru": "Манты",
         "uz": "Manti"
-      },
-      "desc": {
-        "en": "Description pending.",
-        "ru": "Описание ожидается.",
-        "uz": "Tavsif kutumoqda."
-      }
-    },
-    {
-      "id": "53",
-      "categoryId": "drinks",
-      "price": "0 сум",
-      "image": "images/menu-cocktail1.jpg",
-      "name": {
-        "en": "Menu cocktail1",
-        "ru": "Menu cocktail1",
-        "uz": "Menu cocktail1"
       },
       "desc": {
         "en": "Description pending.",
@@ -691,12 +579,12 @@
     {
       "id": "58",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "45,000 сум",
       "image": "images/murskoy-kapriz-salat.webp",
       "name": {
-        "en": "Murskoy kapriz salat",
-        "ru": "Murskoy kapriz salat",
-        "uz": "Murskoy kapriz salat"
+        "en": "Man's Caprice",
+        "ru": "Мужской Каприз",
+        "uz": "Murjskoy Kapriz"
       },
       "desc": {
         "en": "Description pending.",
@@ -707,12 +595,12 @@
     {
       "id": "59",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "45,000 сум",
       "image": "images/olivvie-salat.jpg",
       "name": {
-        "en": "Olivvie salat",
-        "ru": "Olivvie salat",
-        "uz": "Olivvie salat"
+        "en": "Olivie Salad",
+        "ru": "Салат Оливье",
+        "uz": "Olivie"
       },
       "desc": {
         "en": "Description pending.",
@@ -722,13 +610,13 @@
     },
     {
       "id": "61",
-      "categoryId": "dishes",
-      "price": "0 сум",
+      "categoryId": "dishes2",
+      "price": "35,000 сум",
       "image": "images/pelmeni-generated.png",
       "name": {
-        "en": "Pelmeni generated",
-        "ru": "Pelmeni generated",
-        "uz": "Pelmeni generated"
+        "en": "Dumplings",
+        "ru": "Пельмени",
+        "uz": "Pelmeni"
       },
       "desc": {
         "en": "Description pending.",
@@ -739,12 +627,12 @@
     {
       "id": "62",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "45,000 сум",
       "image": "images/salat-baklajan.jpg",
       "name": {
-        "en": "Salat baklajan",
-        "ru": "Salat baklajan",
-        "uz": "Salat baklajan"
+        "en": "Crispy Aubergine",
+        "ru": "Хрустяшие Баклажаны",
+        "uz": "Baklajon Salat"
       },
       "desc": {
         "en": "Description pending.",
@@ -755,12 +643,12 @@
     {
       "id": "63",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "45,000 сум",
       "image": "images/salat-meat-asorti.png",
       "name": {
-        "en": "Salat meat asorti",
-        "ru": "Salat meat asorti",
-        "uz": "Salat meat asorti"
+        "en": "Meat mix Salad",
+        "ru": "Мясное Ассорти",
+        "uz": "Gusht Assorti"
       },
       "desc": {
         "en": "Description pending.",
@@ -771,12 +659,12 @@
     {
       "id": "64",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "40,000 сум",
       "image": "images/salat-ovosshnoe-asorti.jpg",
       "name": {
-        "en": "Salat ovosshnoe asorti",
-        "ru": "Salat ovosshnoe asorti",
-        "uz": "Salat ovosshnoe asorti"
+        "en": "Veggie",
+        "ru": "Овощное Асорти",
+        "uz": "Sabzavotlar Salat"
       },
       "desc": {
         "en": "Description pending.",
@@ -787,12 +675,12 @@
     {
       "id": "65",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "35,000 сум",
       "image": "images/salat-rulet-baklajan.jpg",
       "name": {
-        "en": "Salat rulet baklajan",
-        "ru": "Salat rulet baklajan",
-        "uz": "Salat rulet baklajan"
+        "en": "Rolled Aubergine",
+        "ru": "Рулет Баклажаны",
+        "uz": "Rulet Baklajon"
       },
       "desc": {
         "en": "Description pending.",
@@ -817,46 +705,14 @@
       }
     },
     {
-      "id": "67",
-      "categoryId": "dishes",
-      "price": "0 сум",
-      "image": "images/sup.webp",
-      "name": {
-        "en": "Sup",
-        "ru": "Sup",
-        "uz": "Sup"
-      },
-      "desc": {
-        "en": "Description pending.",
-        "ru": "Описание ожидается.",
-        "uz": "Tavsif kutumoqda."
-      }
-    },
-    {
-      "id": "68",
-      "categoryId": "dishes",
-      "price": "0 сум",
-      "image": "images/tuhun-barak.png",
-      "name": {
-        "en": "Tuhun barak",
-        "ru": "Tuhun barak",
-        "uz": "Tuhun barak"
-      },
-      "desc": {
-        "en": "Description pending.",
-        "ru": "Описание ожидается.",
-        "uz": "Tavsif kutumoqda."
-      }
-    },
-    {
       "id": "69",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "40,000 сум",
       "image": "images/venegret-salat.webp",
       "name": {
-        "en": "Venegret salat",
-        "ru": "Venegret salat",
-        "uz": "Venegret salat"
+        "en": "Venegret",
+        "ru": "Венегрет",
+        "uz": "Venegret "
       },
       "desc": {
         "en": "Description pending.",
@@ -866,13 +722,13 @@
     },
     {
       "id": "70",
-      "categoryId": "salads",
-      "price": "0 сум",
+      "categoryId": "desserts",
+      "price": "45,000 сум",
       "image": "images/watermelon-salat.jpg",
       "name": {
-        "en": "Watermelon salat",
-        "ru": "Watermelon salat",
-        "uz": "Watermelon salat"
+        "en": "Melon Watermelon",
+        "ru": "Арбуз Дыня",
+        "uz": "Qovun Tarvuz"
       },
       "desc": {
         "en": "Description pending.",
@@ -883,12 +739,12 @@
     {
       "id": "71",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "45,000 сум",
       "image": "images/yaponskiy-salat.jpg",
       "name": {
-        "en": "Yaponskiy salat",
-        "ru": "Yaponskiy salat",
-        "uz": "Yaponskiy salat"
+        "en": "Japanese Salad",
+        "ru": "Японский Салат",
+        "uz": "Yaponiya salat"
       },
       "desc": {
         "en": "Description pending.",
@@ -897,14 +753,14 @@
       }
     },
     {
-      "id": "1774128339605",
-      "categoryId": "appetizers",
-      "price": "5000",
-      "image": "images/1774128339589.webp",
+      "id": "1774327622955",
+      "image": "images/1774327622711_non-kabob-tobeposted.png",
+      "categoryId": "dishes2",
+      "price": "75,000 сум",
       "name": {
-        "en": "Venegret",
-        "ru": "Венегрет",
-        "uz": "Venegret"
+        "en": "Non Kebab",
+        "ru": "Нон Кебаб",
+        "uz": "Non Kavob"
       },
       "desc": {
         "en": "",
@@ -913,14 +769,30 @@
       }
     },
     {
-      "id": "1774288425849",
-      "image": "images/placeholder-menu.jpg",
-      "categoryId": "dishes",
-      "price": "75,000 ",
+      "id": "1774327739859",
+      "image": "images/1774327739619_idjan-tobepasted.png",
+      "categoryId": "dishes2",
+      "price": "22,000 сум",
       "name": {
-        "en": "Non-Kebab",
-        "ru": "Нон Кебаб",
-        "uz": "Non Kavob"
+        "en": "Khiva Ijjan",
+        "ru": "Хива Иджан",
+        "uz": "Xiva Ijjan"
+      },
+      "desc": {
+        "en": "",
+        "ru": "",
+        "uz": ""
+      }
+    },
+    {
+      "id": "1774335852541",
+      "image": "images/1774335852269_kovirma-lagman.png",
+      "categoryId": "dishes2",
+      "price": "45,000",
+      "name": {
+        "en": "Lagman ",
+        "ru": "Жаренный Лагман",
+        "uz": "Qovurma Lagman"
       },
       "desc": {
         "en": "",

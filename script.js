@@ -334,7 +334,8 @@ document.addEventListener('DOMContentLoaded', () => {
       tag_popular: "Popular",
       tag_chef_choice: "Chef's Choice",
       tag_bestseller: "Bestseller",
-      tag_sweet: "Sweet Finish"
+      tag_sweet: "Sweet Finish",
+      menu_disclaimer: "* Important: Images are for illustrative purposes only. The actual presentation of the dishes may vary."
     },
     ru: {
       nav_story: "Наша История",
@@ -415,7 +416,8 @@ document.addEventListener('DOMContentLoaded', () => {
       tag_popular: "Популярное",
       tag_chef_choice: "Выбор шефа",
       tag_bestseller: "Бестселлер",
-      tag_sweet: "Сладкий финал"
+      tag_sweet: "Сладкий финал",
+      menu_disclaimer: "* Важно: Изображения приведены исключительно в ознакомительных целях. Реальный вид блюд может отличаться от представленных на фото."
     },
     uz: {
       nav_story: "Biz haqimizda",
@@ -496,7 +498,8 @@ document.addEventListener('DOMContentLoaded', () => {
       tag_popular: "Ommabop",
       tag_chef_choice: "Oshpaz tavsiyasi",
       tag_bestseller: "Xaridorgir",
-      tag_sweet: "Shirin yakun"
+      tag_sweet: "Shirin yakun",
+      menu_disclaimer: "* Muhim: Rasmlar faqat tanishish uchun mo'ljallangan. Taomlarning haqiqiy ko'rinishi rasmdagidan farq qilishi mumkin."
     }
   };
 

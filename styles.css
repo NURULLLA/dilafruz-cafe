@@ -683,10 +683,12 @@ section {
 
 .menu-card-price {
   font-family: var(--ff-accent);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--clr-gold);
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 8px rgba(201, 168, 76, 0.15);
 }
 
 .menu-card-desc {
@@ -722,6 +724,19 @@ section {
   margin-top: 0.8rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 0.6rem;
+}
+
+.menu-disclaimer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+  margin-top: 3rem;
+  font-family: var(--ff-body);
+  font-style: italic;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }
 
 .menu-card-stats {
