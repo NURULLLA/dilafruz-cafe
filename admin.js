@@ -67,14 +67,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- LOGIN LOGIC ---
-  loginBtn.addEventListener('click', () => {
+  loginBtn.addEventListener('click', async () => {
     const token = passwordInput.value.trim();
-    if (token) {
-      localStorage.setItem('gh_token', token);
-      loginError.classList.add('hidden');
-      showDashboard();
-    } else {
+    if (!token) {
+      loginError.textContent = 'Please enter your GitHub token.';
       loginError.classList.remove('hidden');
+      return;
+    }
+    loginBtn.textContent = 'Checking...';
+    loginBtn.disabled = true;
+    try {
+      // Verify token is valid by calling GitHub API
+      const res = await fetch('https://api.github.com/user', {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (res.ok) {
+        const user = await res.json();
+        localStorage.setItem('gh_token', token);
+        loginError.classList.add('hidden');
+        showDashboard();
+        showStatus(`Logged in as: ${user.login}`, 'success');
+      } else if (res.status === 401) {
+        loginError.textContent = 'Token is invalid or expired. Please generate a new token at github.com/settings/tokens';
+        loginError.classList.remove('hidden');
+      } else {
+        loginError.textContent = `GitHub error: ${res.status} ${res.statusText}`;
+        loginError.classList.remove('hidden');
+      }
+    } catch (e) {
+      loginError.textContent = 'Network error. Check your internet connection.';
+      loginError.classList.remove('hidden');
+    } finally {
+      loginBtn.textContent = 'Login';
+      loginBtn.disabled = false;
     }
   });
 
@@ -381,9 +406,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       await saveToGitHub(updatedMenu, id ? `Update item ${id}` : 'Add new item');
       itemModal.classList.add('hidden');
+      showStatus(id ? 'Item updated successfully!' : 'New item added successfully!', 'success');
       loadMenu();
     } catch (err) {
-      alert('Ошибка: ' + err.message);
+      console.error('Save error:', err);
+      if (err.message.includes('401') || err.message.toLowerCase().includes('bad credentials')) {
+        alert('Error: Your GitHub token is invalid or expired.\n\nPlease log out and log in again with a new token from github.com/settings/tokens');
+      } else if (err.message.includes('404')) {
+        alert('Error: Repository or file not found. Check that the repo name is correct.');
+      } else if (err.message.includes('409')) {
+        alert('Error: File conflict. Please reload the page and try again.');
+      } else {
+        alert('Save failed: ' + err.message + '\n\nCheck the browser console (F12) for details.');
+      }
     } finally {
       saveBtn.textContent = originalBtnText;
       saveBtn.disabled = false;
@@ -391,13 +426,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   async function deleteItem(id) {
-    if (confirm('Вы уверены, что хотите удалить это блюдо?')) {
+    if (confirm('Are you sure you want to delete this item?')) {
       const updatedMenu = menuItems.filter(item => item.id !== id);
       try {
         await saveToGitHub(updatedMenu, `Delete item ${id}`);
+        showStatus('Item deleted successfully!', 'success');
         loadMenu();
       } catch (err) {
-        alert('GitHub Error: ' + err.message);
+        alert('Delete failed: ' + err.message + '\n\nCheck the browser console (F12) for details.');
       }
     }
   }
