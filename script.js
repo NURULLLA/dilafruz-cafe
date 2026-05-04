@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderMenu = (items, category = 'all') => {
     if (!menuGrid) return;
     menuGrid.innerHTML = '';
-    const currentLang = localStorage.getItem('preferredLang') || 'en';
+    const currentLang = localStorage.getItem('preferredLang') || 'uz';
     
     const filtered = category === 'all' ? items : items.filter(i => i.categoryId === category);
     
@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Load preferred language or default to EN
-  const savedLang = localStorage.getItem('preferredLang') || 'en';
+  const savedLang = localStorage.getItem('preferredLang') || 'uz';
   setLanguage(savedLang);
 
   // ─── Image Fallback ─────────────────────────────────────────
