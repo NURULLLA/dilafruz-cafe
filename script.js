@@ -534,8 +534,10 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
   });
 
-  // Load preferred language or default to EN
-  const savedLang = localStorage.getItem('preferredLang') || 'uz';
+  // Check URL ?lang= param first (used by QR code), then localStorage, then default to uz
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlLang = urlParams.get('lang');
+  const savedLang = urlLang || localStorage.getItem('preferredLang') || 'uz';
   setLanguage(savedLang);
 
   // ─── Image Fallback ─────────────────────────────────────────

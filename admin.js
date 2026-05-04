@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function generateQRCode() {
     const qrContainer = document.getElementById('qrcode');
     qrContainer.innerHTML = '';
-    // Use current origin for the menu link
-    const url = window.location.origin;
+    // Use current origin for the menu link, force Uzbek language via URL param
+    const url = window.location.origin + '/?lang=uz';
     new QRCode(qrContainer, {
       text: url,
       width: 128,
