@@ -3,7 +3,7 @@
     {
       "id": "1",
       "categoryId": "dishes",
-      "price": "32.000",
+      "price": "32.000 сум",
       "image": "images/1.shurva.jpg",
       "name": {
         "en": "Soup",
