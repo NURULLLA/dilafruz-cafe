@@ -3,11 +3,11 @@
     {
       "id": "1",
       "categoryId": "dishes",
-      "price": "30.000 сум",
+      "price": "31.000 ",
       "image": "images/1.shurva.jpg",
       "name": {
         "en": "Soup",
-        "ru": "Шурпа",
+        "ru": "31.000 sum",
         "uz": "Shurva"
       },
       "desc": {
@@ -691,7 +691,7 @@
     {
       "id": "66",
       "categoryId": "salads",
-      "price": "0 сум",
+      "price": "50,000 сум",
       "image": "images/salat-solyoniy-asorti.png",
       "name": {
         "en": "Salat solyoniy asorti",
